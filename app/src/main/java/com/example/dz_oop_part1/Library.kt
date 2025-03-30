@@ -2,7 +2,7 @@ package com.example.dz_oop_part1
 
 // Реализация системы библиотеки
 class Library {
-    private val items = mutableListOf<LibraryItem>()
+    val items = mutableListOf<LibraryItem>()
 
     fun addItems(newItems: List<LibraryItem>) {
         items.addAll(newItems)
