@@ -1,15 +1,51 @@
 package com.example.dz_oop_part1
 
+import com.example.dz_oop_part1.LibraryItems.Book
+import com.example.dz_oop_part1.LibraryItems.Disk
+import com.example.dz_oop_part1.LibraryItems.DiskType
+import com.example.dz_oop_part1.LibraryItems.Month
+import com.example.dz_oop_part1.LibraryItems.Newspaper
+
 fun main() {
     val library = Library()
 
     // Создаем объекты для тестирования в одну строку
-    val books = listOf(Book(id = 1, name = "Маугли", isAvailable = true, pageCount = 202, author = "Джозеф Киплинг"),
-        Book(id = 2, name = "Война и мир", isAvailable = false, pageCount = 1225, author = "Лев Толстой"))
-    val newspapers = listOf(Newspaper(id = 3, name = "Сельская жизнь", isAvailable = true, paperNumber = 794, month = Month.AUGUST),
-        Newspaper(id = 4, name = "Правда", isAvailable = false, paperNumber = 1234, month = Month.MAY))
-    val disks = listOf(Disk(id = 5, name = "Дэдпул и Росомаха", isAvailable = true, type = DiskType.DVD),
-        Disk(id = 6, name = "Музыкальный альбом", isAvailable = false, type = DiskType.CD))
+    val books = listOf(
+        Book(
+            id = 1,
+            name = "Маугли",
+            isAvailable = true,
+            pageCount = 202,
+            author = "Джозеф Киплинг"
+        ),
+        Book(
+            id = 2,
+            name = "Война и мир",
+            isAvailable = false,
+            pageCount = 1225,
+            author = "Лев Толстой"
+        )
+    )
+    val newspapers = listOf(
+        Newspaper(
+            id = 3,
+            name = "Сельская жизнь",
+            isAvailable = true,
+            paperNumber = 794,
+            month = Month.AUGUST
+        ),
+        Newspaper(
+            id = 4,
+            name = "Правда",
+            isAvailable = false,
+            paperNumber = 1234,
+            month = Month.MAY
+        )
+    )
+    val disks = listOf(
+        Disk(id = 5, name = "Дэдпул и Росомаха", isAvailable = true, type = DiskType.DVD),
+        Disk(id = 6, name = "Музыкальный альбом", isAvailable = false, type = DiskType.CD)
+    )
 
     // Добавляем все предметы в библиотеку
     library.addItems(books)
