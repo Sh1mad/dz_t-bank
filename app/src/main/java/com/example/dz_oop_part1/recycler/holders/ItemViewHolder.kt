@@ -1,8 +1,8 @@
 package com.example.dz_oop_part1.recycler.holders
 
+
 import com.example.dz_oop_part1.R
 import androidx.recyclerview.widget.RecyclerView
-import androidx.viewbinding.ViewBinding
 import com.example.dz_oop_part1.ItemType
 import com.example.dz_oop_part1.LibraryItems.LibraryItem
 import com.example.dz_oop_part1.databinding.ItemLibraryBinding
@@ -37,6 +37,8 @@ class ItemViewHolder (private val binding: ItemLibraryBinding) : RecyclerView.Vi
         name.alpha = alpha
         idItem.alpha = alpha
 
-        
+        val elevation = if (isAvailable) 10f else 1f
+        cardContainer.cardElevation = elevation
     }
+
 }
