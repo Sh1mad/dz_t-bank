@@ -1,4 +1,6 @@
-package com.example.dz_oop_part1
+package com.example.dz_oop_part1.LibraryItems
+
+import com.example.dz_oop_part1.ItemType
 
 // Базовый абстрактный класс для реализации объектов библиотеки
 abstract class LibraryItem(

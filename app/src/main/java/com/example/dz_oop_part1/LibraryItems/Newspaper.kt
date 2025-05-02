@@ -1,4 +1,10 @@
-package com.example.dz_oop_part1
+package com.example.dz_oop_part1.LibraryItems
+
+import com.example.dz_oop_part1.interfaces.Convertable
+import com.example.dz_oop_part1.ItemType
+import com.example.dz_oop_part1.LibraryItems.LibraryItem
+import com.example.dz_oop_part1.interfaces.ReadableInReadingRoom
+import com.example.dz_oop_part1.interfaces.Returnable
 
 // Месяцы выпуска газет
 enum class Month(val monthName: String){

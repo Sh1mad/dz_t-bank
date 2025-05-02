@@ -1,8 +1,18 @@
 package com.example.dz_oop_part1
 
+import com.example.dz_oop_part1.LibraryItems.LibraryItem
+import com.example.dz_oop_part1.interfaces.Convertable
+import com.example.dz_oop_part1.interfaces.ReadableInReadingRoom
+import com.example.dz_oop_part1.interfaces.Returnable
+import com.example.dz_oop_part1.interfaces.TakeHomeable
+import com.example.dz_oop_part1.shops.Shop
+import com.example.dz_oop_part1.shops.BookShop
+import com.example.dz_oop_part1.shops.DiskShop
+import com.example.dz_oop_part1.shops.NewspaperShop
+
 // Реализация системы библиотеки
 class Library {
-    private val items = mutableListOf<LibraryItem>()
+    val items = mutableListOf<LibraryItem>()
 
     fun addItems(newItems: List<LibraryItem>) {
         items.addAll(newItems)

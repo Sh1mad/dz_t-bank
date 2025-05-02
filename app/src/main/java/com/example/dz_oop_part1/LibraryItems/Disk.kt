@@ -1,4 +1,9 @@
-package com.example.dz_oop_part1
+package com.example.dz_oop_part1.LibraryItems
+
+import com.example.dz_oop_part1.ItemType
+import com.example.dz_oop_part1.LibraryItems.LibraryItem
+import com.example.dz_oop_part1.interfaces.Returnable
+import com.example.dz_oop_part1.interfaces.TakeHomeable
 
 // Доступные типы дисков
 enum class DiskType{CD, DVD}
