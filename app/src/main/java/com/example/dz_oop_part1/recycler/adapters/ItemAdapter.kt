@@ -13,9 +13,10 @@ import com.example.dz_oop_part1.databinding.ItemLibraryBinding
 import com.example.dz_oop_part1.recycler.holders.ItemViewHolder
 import com.example.dz_oop_part1.recycler.utils.LibraryItemDiffUtil
 
-class ItemAdapter : RecyclerView.Adapter<ItemViewHolder>() {
-
-    private val data = mutableListOf<LibraryItem>()
+class ItemAdapter (
+    private val data: MutableList<LibraryItem>,
+    private val onItemClick: (Int) -> Unit
+) : RecyclerView.Adapter<ItemViewHolder>() {
 
     fun setNewData(newData: List<LibraryItem>) {
         val diffUtil = LibraryItemDiffUtil(data, newData)
@@ -30,21 +31,24 @@ class ItemAdapter : RecyclerView.Adapter<ItemViewHolder>() {
         
         return ItemViewHolder(binding).apply {
             binding.root.setOnClickListener {
-                handlePersonClick(parent.context, adapterPosition)
+                val position = adapterPosition
+                if (position != RecyclerView.NO_POSITION){
+                    onItemClick(position)
+                }
             }
         }
     }
 
-    private fun handlePersonClick(context: Context, position: Int) {
-        if (position != RecyclerView.NO_POSITION) {
-            val item = data[position]
-
-            makeText(context, "Элемент с id ${item.id}", LENGTH_SHORT).show()
-
-            item.isAvailable = !item.isAvailable
-            notifyItemChanged(position)
-        }
-    }
+//    private fun handlePersonClick(context: Context, position: Int) {
+//        if (position != RecyclerView.NO_POSITION) {
+//            val item = data[position]
+//
+//            makeText(context, "Элемент с id ${item.id}", LENGTH_SHORT).show()
+//
+//            item.isAvailable = !item.isAvailable
+//            notifyItemChanged(position)
+//        }
+//    }
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         holder.bind(data[position])
